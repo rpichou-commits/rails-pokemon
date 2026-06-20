@@ -1,0 +1,6 @@
+<% @trainers.each do |trainer| %>
+  <p><%= trainer.name %></p>
+  <p><%= trainer.age %> years old</p>
+  <%= cl_image_tag trainer.photo.key %>
+  <p><%= link_to "View Profile", trainer_path(trainer) %></p>
+<% end %>

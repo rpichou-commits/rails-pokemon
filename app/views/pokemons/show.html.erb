@@ -1,0 +1,13 @@
+<%= link_to "Trainers", trainers_path %>
+<div>
+  <h1><%= @pokemon.name %></h1>
+  <p><%= @pokemon.element_type %></p>
+  <%= cl_image_tag @pokemon.photo.key %>
+</div>
+<%= simple_form_for [@pokemon, @pokeball] do |f| %>
+  <%= f.association :trainer %>
+  <%= f.input :location %>
+  <%= f.input :caught_on, as: :date %>
+  <%= f.submit "Catch Pokémon" %>
+<% end %>
+<%= link_to "Back to Pokedex", root_path %>

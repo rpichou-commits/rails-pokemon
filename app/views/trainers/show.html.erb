@@ -1,0 +1,12 @@
+<%= @trainer.name %>
+<%= @trainer.age %> years old
+<%= cl_image_tag @trainer.photo.key %>
+
+<% @pokeballs.each do |pokeball| %>
+  <p><%= link_to pokeball.pokemon.name, pokemon_path(pokeball.pokemon) %></p>
+  <%= cl_image_tag pokeball.pokemon.photo.key %>
+  <%= pokeball.caught_on %>
+  <%= pokeball.location %>
+<% end %>
+
+<%= link_to "Back to Trainers", trainers_path %>
